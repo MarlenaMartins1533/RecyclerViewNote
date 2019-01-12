@@ -17,12 +17,7 @@ class NoteListAdapter (private val notes: List<Note>,
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
         val note = notes[position]
-
-        holder?.let{
-            it.title.text = note.title
-            it.description.text = note.description
-            //val people: String? = null
-        }
+        holder.bindView(note)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -45,8 +40,3 @@ class NoteListAdapter (private val notes: List<Note>,
         }
     }
 }
-/* (val people: ArrayList<Person>) : RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
-class ViewHolder (people: ArrayList<Person>): RecyclerView.ViewHolder(people) {
-        val
-
-*/

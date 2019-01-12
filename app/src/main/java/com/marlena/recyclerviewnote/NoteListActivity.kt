@@ -1,7 +1,7 @@
 package com.marlena.recyclerviewnote
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.widget.StaggeredGridLayoutManager
+import android.support.v7.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_note_list.*
 
 class NoteListActivity : AppCompatActivity() {
@@ -10,10 +10,10 @@ class NoteListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_note_list)
 
-        val recyclerView = note_list_recyclerview
-        recyclerView.adapter = NoteListAdapter(notes(),this)
-        val layoutManager = StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL)
-        recyclerView.layoutManager = layoutManager
+        note_list_recyclerview.adapter = NoteListAdapter(notes(),this)
+
+        val layoutManager = LinearLayoutManager(this)
+        note_list_recyclerview.layoutManager = layoutManager
     }
 
     private fun notes(): List<Note>{
