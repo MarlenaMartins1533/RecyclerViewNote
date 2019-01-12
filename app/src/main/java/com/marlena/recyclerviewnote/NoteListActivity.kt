@@ -10,10 +10,9 @@ class NoteListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_note_list)
 
-        note_list_recyclerview.adapter = NoteListAdapter(notes(),this)
-
         val layoutManager = LinearLayoutManager(this)
         note_list_recyclerview.layoutManager = layoutManager
+        note_list_recyclerview.adapter = NoteListAdapter(notes(),this)
     }
 
     private fun notes(): List<Note>{
